@@ -27,7 +27,7 @@ export class CatService {
 
         return await this.catRepository.save({...cat,breed})
        // return await this.catRepository.save(cat);
-       return "add";
+    
     }
 
     getAllCat():Promise<CatEntity[]>{
@@ -41,17 +41,14 @@ export class CatService {
         return await this.catRepository.softDelete(id);
     }
 
-    async editarCat(id: number,cat:CatEntity):Promise<CatEntity> {
+    async editarCat(id: number,cat:UpdateCatDto) {
         let toUpdate=await this.catRepository.findOneBy({id});
         let update =Object.assign(toUpdate,cat);
         const cat_actualizado = await this.catRepository.save(toUpdate);
         return cat_actualizado;
     }
 
-   async updateCat(id:number,updateCatDto:UpdateCatDto){
-       // return await this.catRepository.update(id,updateCatDto)
-       return "update cat";
-    }
+ 
 
     
 }

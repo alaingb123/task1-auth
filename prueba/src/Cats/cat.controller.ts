@@ -36,7 +36,7 @@ export class CatController {
 
     @Patch(':id')
     async editCat(@Param('id')id:number,@Body() cat:UpdateCatDto){
-        return await this.catsService.updateCat(id,cat);
+        return await this.catsService.editarCat(id,cat);
     }
     
 
