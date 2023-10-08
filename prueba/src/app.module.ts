@@ -7,6 +7,8 @@ import { join } from 'path';
 import { BreedsModule } from './breeds/breeds.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { DeparmentModule } from './deparment/deparment.module';
+import { CategoriesModule } from './categories/categories.module';
 
 @Module({
   imports: [
@@ -24,7 +26,9 @@ import { AuthModule } from './auth/auth.module';
     }),
       BreedsModule,
       UsersModule,
-      AuthModule],
+      AuthModule,
+      DeparmentModule,
+      CategoriesModule],
   controllers: [],
   providers: [],
 })
